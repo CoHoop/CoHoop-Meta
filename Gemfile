@@ -13,6 +13,7 @@ gem 'will_paginate', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 group :production do
   gem 'pg'
