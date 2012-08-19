@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CoHoopMeta</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <nav>
+    <% if user_signed_in? %>
+      <%= link_to current_user.email, main_app.edit_user_registration_path %>
+      | <%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete %>
+      <% if current_user.forem_admin %>
+        | <%= link_to "Administrate", forem.admin_root_url %>
+      <% end %>
+    <% else %>
+      <%= link_to "Sign up", main_app.new_user_registration_path %>
+      | <%= link_to "Sign in", main_app.new_user_session_path %>
+      <%= link_to "Sign in with Facebook", main_app.user_omniauth_authorize_path(:facebook) %>
+    <% end %>
+  </nav>
+</header>
+
+<%= yield %>
+
+</body>
+</html>
