@@ -20,7 +20,7 @@ set :admin_runner, "ubuntu"
 ssh_options[:forward_agent] = true
 ssh_options[:keys] = ["#{ ENV['HOME']}/.ssh/KEY-CoHoop.pem"]
 
-set :rails_env, 'development'
+set :rails_env, 'production'
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
@@ -35,3 +35,6 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
+
+#after 'deploy:setup', 'db:setup'
+after :deploy, "deploy:migrate"
