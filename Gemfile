@@ -45,7 +45,8 @@ gem 'jquery-rails'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
-gem 'thin'
+#gem 'thin'
+gem 'passenger'
 
 # Deploy with Capistrano
 # gem 'capistrano'
