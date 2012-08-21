@@ -21,7 +21,7 @@ test:
 production:
   adapter: postgresql
   enconding: utf-8
-  database: cohoop-meta
+  database: cohoop_meta
   pool: 5
   timeout: 5000
   username: ubuntu
