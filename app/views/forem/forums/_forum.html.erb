@@ -1,16 +1,28 @@
 <% if can?(:read, forum) %>
   <tr class="forum <%= cycle("odd", "even") %>">
     <td>
-      <%= link_to forum.title, forem.forum_path(forum), :class => "title" %>
-      <div class='description'><%= forum.description %></div>
-      <%= t('forem.forums.index.last_post') -%>
-      <span class='last_post'>
-          <% if last_post = forum.last_post_for(forem_user) -%>
-            <%= link_to(last_post.topic, forem.forum_topic_path(forum, last_post.topic)) -%> <%= t('by') %> <%= last_post.user %> <%= t('time_ago_in_words', :time => time_ago_in_words(last_post.created_at)) -%>
-          <% else %>
-            <%= t('forem.forums.index.none') -%>
-          <% end %>
-        </span>
+    <div class="container-fluid">
+        
+<div class="row-fluid">
+<div class="span12">
+      <h3><%= link_to forum.title, forem.forum_path(forum), :class => "title" %></h3>
+      <p class='description'><%= forum.description %></p>
+      <div class="row-fluid">
+        <div class="span1">
+            <p><%= t('forem.forums.index.last_post') -%></p>
+        </div>
+          <div class="span10">
+                <% if last_post = forum.last_post_for(forem_user) -%>
+                    <%= link_to(last_post.topic, forem.forum_topic_path(forum, last_post.topic)) -%> <small><%= t('by') %> <%= last_post.user %> <%= t('time_ago_in_words', :time => time_ago_in_words(last_post.created_at)) -%></small>
+                <% else %>
+                    <%= t('forem.forums.index.none') -%>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
     </td>
     <td class="topics-count"><%= topics_count(forum) %></td>
     <td class="posts-count"><%= posts_count(forum) %></td>
