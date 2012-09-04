@@ -3,6 +3,9 @@
 * @author Thibault Duforest
 */
 /*************************/
+/* General styles */
+/*************************/
+/*************************/
 /* Facebook login button */
 /*************************/
 .fb-login-button {
@@ -19,28 +22,26 @@
 /***************/
 /* Sidebar nav */
 /***************/
+.navbar-inner {
+  border-radius: 0; }
+
 .sidebar-nav ul ul {
   list-style-type: none;
   margin: 0; }
-
-.sidebar-nav ul ul li {
-  padding: 2px 0 2px 12px; }
-
-.sidebar-nav ul ul li:hover {
-  background-color: #EEE; }
-
-.sidebar-nav ul ul li.active {
-  font-weight: bolder;
-  background-color: #EEE; }
-
-.sidebar-nav ul ul li a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-decoration: none; }
-
-.sidebar-nav ul ul li.active a {
-  cursor: default; }
+  .sidebar-nav ul ul li {
+    padding: 2px 0 2px 12px; }
+    .sidebar-nav ul ul li a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-decoration: none; }
+  .sidebar-nav ul ul li:hover {
+    background-color: #EEE; }
+  .sidebar-nav ul ul li.active {
+    font-weight: bolder;
+    background-color: #EEE; }
+    .sidebar-nav ul ul li.active a {
+      cursor: default; }
 
 /*************/
 /* Post list */
@@ -55,6 +56,10 @@
 /*********/
 /* Posts */
 /*********/
+#forum menu, #topic menu {
+  margin: 6px 0 6px 20px;
+  padding: 0; }
+
 .topic-post.first-post {
   background-color: #f8f8f8; }
 
@@ -64,20 +69,31 @@
   padding: 12px 0;
   position: relative; }
 
-.topic-post .btn-group {
-  position: absolute;
-  top: 6px;
-  right: 6px; }
-
 .user-infos-post {
   padding-left: 6px; }
 
-.post-date {
-  color: #999; }
+.user-message-post > div {
+  clear: both;
+  padding: 16px 24px;
+  margin: 12px 6px; }
 
-.dropdown-menu {
-  right: 0;
-  left: inherit; }
+.post-date {
+  color: #999;
+  padding-right: 12px; }
+
+.in_reply_to {
+  font-size: 0.8em; }
+
+.actions {
+  list-style-type: none;
+  margin-left: 0;
+  float: left;
+  width: 100%; }
+  .actions li {
+    float: left;
+    margin: 0 8px; }
+  .actions li:nth-child(3), .actions li:nth-child(4) {
+    float: right; }
 
 /********************/
 /* Responsive stuff */
@@ -92,3 +108,13 @@
   .user-message-post {
     clear: left;
     padding-top: 12px; } }
+/**********/
+/* Footer */
+/**********/
+footer {
+  width: 100%; }
+  footer div {
+    width: 960px;
+    margin: 0 auto; }
+    footer div p {
+      font-size: 0.8em; }
