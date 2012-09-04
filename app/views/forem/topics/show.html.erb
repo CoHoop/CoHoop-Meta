@@ -3,24 +3,29 @@
 
   <menu>
     <% if @topic.can_be_replied_to? && can?(:reply, @topic) %>
-      <%= link_to t(".reply"), forem.new_topic_post_path(@topic) %>
+      <%= link_to t(".reply"), forem.new_topic_post_path(@topic), class: 'btn btn-success btn-large' %>
     <% end %>
     <% if @topic.user == forem_user || forem_admin? %>
-      <%= link_to t(".delete"), forem.forum_topic_path(@forum, @topic), :method => :delete, :confirm => t("are_you_sure") %>
+      <%= link_to t(".delete"), forem.forum_topic_path(@forum, @topic), :method => :delete, :confirm => t("are_you_sure"), class: 'btn btn-danger btn-small' %>
     <% end %>
     <% if forem_user %>
       <% if !@topic.subscriber?(forem_user.id) %>
-        <%= link_to t(".subscribe"), forem.subscribe_forum_topic_path(@forum, @topic) %>
+        <%= link_to t(".subscribe"), forem.subscribe_forum_topic_path(@forum, @topic), class: 'btn btn-info btn-small' %>
       <% else %>
-        <%= link_to t(".unsubscribe"), forem.unsubscribe_forum_topic_path(@forum, @topic) %>
+        <%= link_to t(".unsubscribe"), forem.unsubscribe_forum_topic_path(@forum, @topic), class: 'btn btn-info btn-small' %>
       <% end %>
     <% end %>
   </menu>
 
   <% if forem_admin? %>
-    <%= link_to t(".hide.#{@topic.hidden}"), forem.toggle_hide_admin_topic_path(@topic), :method => :put %> | 
-    <%= link_to t(".lock.#{@topic.locked}"), forem.toggle_lock_admin_topic_path(@topic), :method => :put %> |
-    <%= link_to t(".pin.#{@topic.pinned}"), forem.toggle_pin_admin_topic_path(@topic), :method => :put %>
+    <div class="btn-group pull-right">
+        <button class="btn dropdown-toggle" data-toggle="dropdown"><i class="icon-edit"></i> Admin actions <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><%= link_to t(".hide.#{@topic.hidden}"), forem.toggle_hide_admin_topic_path(@topic), :method => :put %></li>
+            <li><%= link_to t(".lock.#{@topic.locked}"), forem.toggle_lock_admin_topic_path(@topic), :method => :put %></li>
+            <li><%= link_to t(".pin.#{@topic.pinned}"), forem.toggle_pin_admin_topic_path(@topic), :method => :put %></li>
+        </ul>
+    </div>
   <% end %>
 
   <% if @topic.pending_review? %>
@@ -36,9 +41,13 @@
 
   <%= forem_pages_widget(@posts) %>
 
-  <div id='posts'>
-    <%= render :partial => "forem/posts/post", :collection => @posts %>
-  </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <%= render :partial => "forem/posts/post", :collection => @posts %>
+            </div>
+        </div>
+    </div>
 
   <%= forem_pages_widget(@posts) %>
 </div>
