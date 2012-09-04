@@ -28,7 +28,7 @@
             </a>
             <a class="brand" href="#">Meta CoHoop</a>
             <nav class="nav-collapse collapse">
-<ul class="nav">
+            <ul class="nav">
                 <% if user_signed_in? %>
                 <li><%= link_to current_user.email, main_app.edit_user_registration_path %></li>
                 <li><%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete %> </li>
@@ -40,7 +40,7 @@
                 <li><%= link_to "Sign in", main_app.new_user_session_path %></li>
                 <li><%= link_to "Sign in with Facebook", main_app.user_omniauth_authorize_path(:facebook), class: 'fb-login-button' %></li>
                 <% end %>
-</ul>
+            </ul>
             </nav><!--/.nav-collapse -->
         </div>
     </div>
@@ -48,11 +48,19 @@
 
 <div class="container-fluid">
     <div class="row-fluid">
-        <div class="span12">
+        <div class="span1"></div>
+        <div class="span10">
             <%= yield %>
         </div>
+        <div class="span1"></div>
     </div>
 </div>
+
+<footer>
+    <div>
+        <p>CoHoop Meta 2012 - Chuck Norris approval - All images are copyright by CoHoop and protected by Chuck Norris himself, so, stealing is vain.</p>
+    </div>
+</footer>
 
 </body>
 </html>
