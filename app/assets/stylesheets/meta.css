@@ -1,0 +1,94 @@
+/**
+* BASE STYLE for COHOOP META FORUMS
+* @author Thibault Duforest
+*/
+/*************************/
+/* Facebook login button */
+/*************************/
+.fb-login-button {
+  text-indent: -9999px;
+  /*background-image: url('/assets/images/fb-login.png');*/
+  background-image: image-url("fb-login.png");
+  background-repeat: no-repeat;
+  width: 154px;
+  height: 22px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 10px; }
+
+/***************/
+/* Sidebar nav */
+/***************/
+.sidebar-nav ul ul {
+  list-style-type: none;
+  margin: 0; }
+
+.sidebar-nav ul ul li {
+  padding: 2px 0 2px 12px; }
+
+.sidebar-nav ul ul li:hover {
+  background-color: #EEE; }
+
+.sidebar-nav ul ul li.active {
+  font-weight: bolder;
+  background-color: #EEE; }
+
+.sidebar-nav ul ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none; }
+
+.sidebar-nav ul ul li.active a {
+  cursor: default; }
+
+/*************/
+/* Post list */
+/*************/
+.list-posts a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+  color: inherit; }
+
+/*********/
+/* Posts */
+/*********/
+.topic-post.first-post {
+  background-color: #f8f8f8; }
+
+.topic-post {
+  border-bottom: 1px solid #EEE;
+  margin: 24px 0;
+  padding: 12px 0;
+  position: relative; }
+
+.topic-post .btn-group {
+  position: absolute;
+  top: 6px;
+  right: 6px; }
+
+.user-infos-post {
+  padding-left: 6px; }
+
+.post-date {
+  color: #999; }
+
+.dropdown-menu {
+  right: 0;
+  left: inherit; }
+
+/********************/
+/* Responsive stuff */
+/********************/
+@media (max-width: 767px) {
+  .user-infos-post > img, .user-infos-post > div {
+    float: left; }
+
+  .user-infos-post > div {
+    margin-left: 12px; }
+
+  .user-message-post {
+    clear: left;
+    padding-top: 12px; } }
