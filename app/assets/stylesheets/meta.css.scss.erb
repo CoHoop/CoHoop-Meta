@@ -1,0 +1,270 @@
+/**
+* BASE STYLE for COHOOP META FORUMS
+* @author Thibault Duforest
+*/
+/******************/
+/* General styles */
+/******************/
+.alert {
+    display: block;
+}
+
+h2 {
+    font-size: 1.4em;
+}
+
+.category > h2 {
+    font-size: 1.2em;
+}
+
+.forum h3 {
+    a  {
+        color: #0088cc;
+    }
+    a:hover {
+        color: #005580;
+        text-decoration: underline;
+    }
+}
+
+/*************************/
+/* Facebook login button */
+/*************************/
+
+.fb-login-button {
+    text-indent: -9999px;
+    background-image: url(<%= asset_path 'fb-login.png' %>);
+    background-repeat: no-repeat;
+    width: 154px;
+    height: 22px;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 10px;
+}
+
+/***************/
+/* Sidebar nav */
+/***************/
+
+.navbar-inner {
+    border-radius: 0;
+}
+
+.sidebar-nav {
+    
+    ul ul {
+        list-style-type: none;
+        margin: 0;
+        
+        li {
+            padding: 2px 0 2px 12px;
+            
+            a {
+                display: block;
+                height: 100%;
+                width: 100%;
+                text-decoration: none;
+            }
+        }
+        
+        li:hover {
+            background-color: #EEE;
+        }
+        
+        li.active {
+            font-weight: bolder;
+            background-color: #EEE;
+            
+            a {
+                cursor: default;
+            }
+        }
+    }
+    
+}
+
+/*************/
+/* Post list */
+/*************/
+
+.list-posts a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+/*********/
+/* Posts */
+/*********/
+#forum menu, #topic menu {
+    margin: 6px 0;
+    padding: 0;
+}
+
+.topic-post.first-post {
+    background-color: #f8f8f8;
+}
+
+.topic-post {
+    border-bottom: 1px solid #EEE;
+    margin: 24px 0;
+    padding: 12px 0;
+    position: relative;
+}
+
+.user-infos-post {
+    margin-top: 18px;
+    padding-left: 16px;
+}
+
+.user-message-post > div {
+    clear: both;
+    padding: 16px 24px;
+    margin: 12px 6px;
+}
+
+.post-date {
+    color: #999;
+    padding-right: 12px;
+}
+
+.in_reply_to {
+    font-size: 0.8em;
+}
+
+.actions {
+    list-style-type: none;
+    margin-left: 0;
+    float: left;
+    width: 100%;
+    
+    li {
+        float: left;
+        margin: 0 8px;
+    }
+    
+    li:nth-child(3), li:nth-child(4) {
+        float: right;
+    }
+    
+}
+
+/*********/
+/* Forms */
+/*********/
+form abbr {
+
+}
+
+form.new_topic label,
+form.new_post label {
+    font-size: 1.3em;
+}
+
+form.new_topic input,
+form.new_post input {
+    width: 50%;
+    padding: 12px;
+    font-size: 1.2em;
+}
+
+form.new_topic textarea,
+form.new_post textarea {
+    min-width: 75%;
+    max-width: 75%;
+    height: 250px;
+    padding: 12px;
+    font-size: 1.2em;
+}
+
+form.new_topic input[type=submit],
+form.new_post input[type=submit] {
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #5bb75b;
+    *background-color: #51a351;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+    background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+    background-image: -o-linear-gradient(top, #62c462, #51a351);
+    background-image: linear-gradient(to bottom, #62c462, #51a351);
+    background-image: -moz-linear-gradient(top, #62c462, #51a351);
+    background-repeat: repeat-x;
+    border-color: #51a351 #51a351 #387038;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff62c462', endColorstr='#ff51a351', GradientType=0);
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    width: 20%;
+}
+
+form.new_topic input[type=submit]:hover,
+form.new_post input[type=submit]:hover {
+    color: #ffffff;
+    background-color: #51a351;
+    *background-color: #499249;
+    background-position: 0 -15px;
+    -webkit-transition: background-position 0.1s linear;
+    -moz-transition: background-position 0.1s linear;
+    -o-transition: background-position 0.1s linear;
+    transition: background-position 0.1s linear;
+}
+/********************/
+/* Responsive stuff */
+/********************/
+
+@media (max-width: 767px) {
+    
+    .user-infos-post > img, .user-infos-post > div {
+        float: left;
+    }
+    
+    .user-infos-post > div {
+        margin-left: 12px;
+    }
+    
+    .user-message-post {
+        clear: left;
+        padding-top: 12px;
+    }
+}
+
+/*********/
+/* Icons */
+/*********/
+span.icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+    line-height: 14px;
+    vertical-align: text-top;
+    background-image: url(<%= asset_path 'glyphicons-halflings.png' %>);
+    background-repeat: no-repeat;
+}
+
+span.icon.pin {
+    background-position: -312px -24px;
+}
+
+span.icon.lock {
+    background-position: -287px -24px;
+}
+
+/**********/
+/* Footer */
+/**********/
+
+footer {
+    width: 100%;
+    
+    div {
+        width: 960px;
+        margin: 0 auto;
+        p {
+            font-size: 0.8em;
+        }
+    }
+}
