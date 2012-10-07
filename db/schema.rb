@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120816021639) do
+ActiveRecord::Schema.define(:version => 20121007233958) do
 
   create_table "forem_allowed_groups", :force => true do |t|
     t.integer "forum_id"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(:version => 20120816021639) do
   end
 
   add_index "forem_categories", ["slug"], :name => "index_forem_categories_on_slug", :unique => true
+
+  create_table "forem_configurations", :force => true do |t|
+    t.boolean  "post_approval"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "forem_forums", :force => true do |t|
     t.string  "title"

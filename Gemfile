@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
-gem 'forem', git: 'git://github.com/gabriel-dehan/forem.git', branch: 'private-forums'
+gem 'forem', git: 'git://github.com/gabriel-dehan/forem.git', branch: 'post-approval-optionnalisation'
 gem 'forem-theme-twist', :git => "git://github.com/radar/forem-theme-twist.git"
 
 gem 'devise'
