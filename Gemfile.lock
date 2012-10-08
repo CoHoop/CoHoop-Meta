@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/gabriel-dehan/forem.git
-  revision: 218c2c2c7c240afde247fe8c8753afe9b70dcafb
-  branch: post-approval-optionnalisation
+  revision: 87c7f8363488aaab9df2723b4a4cc61dbef8d45f
+  branch: post-topic-approval
   specs:
     forem (1.0.0.beta1)
       cancan (= 1.6.7)
