@@ -1,0 +1,8 @@
+<h2><%= t("forem.admin.configuration.index") %></h2>
+
+<%= simple_form_for [forem, :admin, @configuration] do |f| %>
+  <%= f.label :post_approval, t("forem.admin.configuration.post_approval") %>
+  <%= f.check_box :post_approval %>
+  <br />
+  <%= f.submit %>
+<% end %>

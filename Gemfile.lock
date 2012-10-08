@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gabriel-dehan/forem.git
-  revision: 1389cabe3bb5004635a6502d7dd6bb87167679a3
+  revision: 218c2c2c7c240afde247fe8c8753afe9b70dcafb
   branch: post-approval-optionnalisation
   specs:
     forem (1.0.0.beta1)
